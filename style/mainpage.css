@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    height: 100vh;
+    margin: 0;
+    padding-top: 20px; /* Add padding to move elements up */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #000000, #171717);
+    color: white;
+}
+img {
+    max-width: 80%;
+    margin-bottom: -5px;
+}
+.label {
+    text-align: center;
+    margin-top: -60px;
+    font-size: 28px;
+}
+.buttons {
+    margin-top: -15px;
+}
+.buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #171717; /* Match the background color */
+    color: white; /* Text color for visibility */
+    border: 1px solid white; /* Border to distinguish buttons */
+    border-radius: 5px; /* Rounded corners */
+}
+.buttons button:hover {
+    background: #333333; /* Slightly lighter color on hover */
+}

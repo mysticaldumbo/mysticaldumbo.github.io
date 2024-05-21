@@ -12,11 +12,11 @@ body {
 }
 img {
     max-width: 80%;
-    margin-bottom: -40px;
+    margin-top: -55px; /* Increase negative margin to move the image higher up */
 }
 .label {
     text-align: center;
-    margin-top: -40px;
+    margin-top: -70px;
     font-size: 28px;
 }
 #name {

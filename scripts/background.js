@@ -1,3 +1,9 @@
+
+/* 
+EPILEPSY WARNING
+script to change background color of a website very very fast
+*/
+
 (function() {
     'use strict';
 
@@ -14,8 +20,7 @@
         document.body.style.backgroundColor = getRandomColor();
     }
 
-    window.activateBackground = function() {
-        changeBackgroundColor();
-        setInterval(changeBackgroundColor, 1);
-    };
+    changeBackgroundColor();
+
+    setInterval(changeBackgroundColor, 1);
 })();

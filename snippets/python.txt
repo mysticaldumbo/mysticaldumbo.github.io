@@ -1,0 +1,8 @@
+def fibonacci(n):
+    fib_sequence = [0, 1]
+    while len(fib_sequence) < n:
+        # Generate Fibonacci sequence by adding the last two numbers
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    return fib_sequence
+
+print("Fibonacci sequence up to 10 terms:", fibonacci(10))

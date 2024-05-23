@@ -1,0 +1,26 @@
+class Program
+{
+    static int Fibonacci(int n)
+    {
+        if (n <= 1)
+            return n;
+        // Recursive function to calculate Fibonacci series
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
+    }
+
+    static void Main(string[] args)
+    {
+        int limit = 4000000;
+        int sum = 0;
+        int i = 1;
+        int fib = Fibonacci(i);
+        while (fib < limit)
+        {
+            if (fib % 2 == 0)
+                sum += fib;
+            i++;
+            fib = Fibonacci(i);
+        }
+        Console.WriteLine("Sum of even Fibonacci numbers up to " + limit + " is: " + sum);
+    }
+}

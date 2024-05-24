@@ -1,0 +1,13 @@
+graph TD;
+
+    A[Square Rect] -- Link text --> B((Circle));
+    A --> C(Round Rect);
+    B --> D{Rhombus};
+    C --> D;
+    D --> E[Example];
+
+graph TD;
+    A[Square Rect] -- Link text --> B((Circle))
+    B --> C(Round Rect)
+    C --> D{Rhombus}
+    D --> E[Example]

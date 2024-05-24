@@ -1,0 +1,38 @@
+<template>
+  <!-- Define the template for the component -->
+  <div>
+    <!-- Render the message using data from the component -->
+    <h1>{{ message }}</h1>
+    <!-- Render a button that triggers the changeMessage method -->
+    <button @click="changeMessage">Change Message</button>
+  </div>
+</template>
+
+<script>
+// Define the script for the component
+export default {
+  // Define the data function that returns the initial state of the component
+  data() {
+    return {
+      message: 'Hello, World!' // Initial message
+    };
+  },
+  // Define methods that can be used within the component
+  methods: {
+    changeMessage() {
+      // Method to change the message
+      this.message = 'New Message!'; // Update the message
+    }
+  }
+};
+</script>
+
+<style scoped>
+/* Define scoped styles for the component */
+h1 {
+  color: blue; /* Set the color of the heading */
+}
+button {
+  background-color: yellow; /* Set the background color of the button */
+}
+</style>

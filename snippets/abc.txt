@@ -1,0 +1,23 @@
+X:1
+T:Simple Tune
+M:4/4
+L:1/8
+K:C
+
+G4 A4 | B4 c4 | d2 e2 f2 g2 | a4 g4 | f4 e4 | d4 c4 | B2 A2 G2 z2 ||
+
+% X:1 - Tune number 1
+% T:Simple Tune - Title of the tune
+% M:4/4 - Time signature (4/4 time)
+% L:1/8 - Default note length (eighth note)
+% K:C - Key signature (C major)
+
+% G4 A4 - Two half notes: G and A
+% B4 c4 - Two half notes: B and c
+% d2 e2 f2 g2 - Four quarter notes: d, e, f, and g
+% a4 g4 - Two half notes: a and g
+% f4 e4 - Two half notes: f and e
+% d4 c4 - Two half notes: d and c
+% B2 A2 G2 z2 - Three quarter notes (B, A, G) followed by a quarter rest (z)
+
+% || - End of the line

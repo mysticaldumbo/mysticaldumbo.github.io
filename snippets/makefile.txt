@@ -1,0 +1,20 @@
+# Define variables
+CC := gcc # Compiler
+CFLAGS := -Wall -Wextra -std=c99 # Compiler flags
+SRC := main.c utils.c # Source files
+OBJ := $(SRC:.c=.o) # Object files
+
+# Default target
+all: program
+
+# Compile source files into object files
+%.o: %.c
+    $(CC) $(CFLAGS) -c $< -o $@
+
+# Link object files into the executable
+program: $(OBJ)
+    $(CC) $(CFLAGS) $^ -o $@
+
+# Clean up intermediate object files and executable
+clean:
+    rm -f $(OBJ) program

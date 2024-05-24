@@ -1,0 +1,39 @@
+# Big Header
+
+## Headers
+
+### Sub-headers
+
+## Emphasis
+
+You can make text *italic* using asterisks or underscores, and **bold** using double asterisks or underscores.
+
+## Lists
+
+### Unordered List
+
+- Item 1
+- Item 2
+  - Sub-item 2.1
+  - Sub-item 2.2
+
+### Ordered List
+
+1. First item
+2. Second item
+   1. Sub-item 2.1
+   2. Sub-item 2.2
+
+## Links
+
+[Guide](https://www.markdownguide.org/)
+
+## Images
+
+![Logo](https://markdown-here.com/img/icon256.png)
+
+## Code
+
+```python
+def greet(name):
+    print("Hello, " + name + "!")

@@ -1,5 +1,57 @@
 // Array of programming languages
-let languages = ["JavaScript", "Python", "Java", "C++", "Ruby", "PHP", "Swift", "C#", "Go", "TypeScript", "Rust"];
+let languages = [
+    "ABC",
+    "Assembly",
+    "Bash",
+    "Batch",
+    "C#",
+    "C++",
+    "Clojure",
+    "CoffeeScript",
+    "CSS",
+    "CSV",
+    "Dart",
+    "F#",
+    "Go",
+    "Groovy",
+    "HLSL",
+    "HTML",
+    "Java",
+    "JavaScript",
+    "JSON",
+    "JSX",
+    "Julia",
+    "Kotlin",
+    "Less",
+    "Lua",
+    "Makefile",
+    "Markdown",
+    "MDX",
+    "Mermaid",
+    "MJML",
+    "Perl",
+    "PHP",
+    "PowerShell",
+    "Pug",
+    "Python",
+    "R",
+    "Raku",
+    "Razor",
+    "Ruby",
+    "Rust",
+    "SCSS",
+    "SQL",
+    "Swift",
+    "TOML",
+    "TSX",
+    "Twig",
+    "TypeScript",
+    "VBS",
+    "WAT",
+    "XML",
+    "YAML",
+    "Zig"
+];  
 
 // Function to pick a random language
 function pickRandomLanguage() {
@@ -8,13 +60,11 @@ function pickRandomLanguage() {
 
 // Function to check the user's guess
 function guessLanguage(guess) {
-    const targetLanguage = languages.find(language => language.toLowerCase() === guess.toLowerCase());
+    const lowercaseGuess = guess.toLowerCase();
+    const targetLanguage = languages.find(language => language.toLowerCase() === lowercaseGuess);
     if (targetLanguage) {
-        console.clear()
         alert("Congratulations! You guessed it. The programming language was: " + targetLanguage);
-        // Generate a new language and add it to the array
-        const newLanguage = generateNewLanguage();
-        languages.push(newLanguage);
+        restart();
     } else {
         alert("Sorry, that's not correct. Keep guessing!");
     }
@@ -22,7 +72,7 @@ function guessLanguage(guess) {
 
 // Function to generate a new language
 function generateNewLanguage() {
-    startGame();
+    return pickRandomLanguage();
 }
 
 // Function to load a snippet from a file
@@ -54,6 +104,11 @@ function startGame() {
 
     // Load a snippet of code for the target language
     loadSnippet(targetLanguage);
+}
+
+function restart() {
+    console.clear();
+    startGame();
 }
 
 // Start the game when the page loads

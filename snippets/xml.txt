@@ -1,0 +1,26 @@
+<!-- Define a bookstore -->
+<bookstore>
+    <!-- Define a book -->
+    <book category="cooking">
+        <!-- Define the title of the book -->
+        <title lang="en">Everyday Italian</title>
+        <!-- Define the author of the book -->
+        <author>Giada De Laurentiis</author>
+        <!-- Define the year of publication -->
+        <year>2005</year>
+        <!-- Define the price of the book -->
+        <price>30.00</price>
+    </book>
+    
+    <!-- Define another book -->
+    <book category="children">
+        <!-- Define the title of the book -->
+        <title lang="en">Harry Potter</title>
+        <!-- Define the author of the book -->
+        <author>J.K. Rowling</author>
+        <!-- Define the year of publication -->
+        <year>2005</year>
+        <!-- Define the price of the book -->
+        <price>29.99</price>
+    </book>
+</bookstore>

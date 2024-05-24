@@ -1,0 +1,14 @@
+' Create a variable to store the user's name
+Dim userName
+
+' Prompt the user to enter their name
+userName = InputBox("Please enter your name:")
+
+' Check if the user entered a name
+If userName <> "" Then
+    ' Display a greeting message
+    MsgBox "Hello, " & userName & "!", vbInformation, "Greeting"
+Else
+    ' Display an error message if the user did not enter a name
+    MsgBox "You did not enter a name. Please try again.", vbExclamation, "Error"
+End If

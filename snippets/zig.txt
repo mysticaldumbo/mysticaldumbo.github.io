@@ -1,0 +1,17 @@
+const std = @import("std");
+
+pub fn main() void {
+    const stdout = std.io.getStdOut().writer();
+
+    // Define a struct representing a Point
+    const Point = struct {
+        x: f64,
+        y: f64,
+    };
+
+    // Create an instance of the Point struct
+    var point = Point{ .x = 3.0, .y = 4.0 };
+
+    // Print the coordinates of the Point
+    try stdout.print("Point coordinates: ({}, {})\n", .{ point.x, point.y });
+}

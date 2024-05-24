@@ -1,0 +1,22 @@
+---
+title: The Dough of the Centry
+author: John Doe
+date: May 24, 2024
+---
+
+# MDX Example
+
+blah blah blah
+
+## JSX Components
+
+You can embed JSX components:
+
+```jsx
+// Define a simple JSX component
+const MyComponent = ({ name }) => {
+  return <div>Hello, {name}!</div>;
+};
+
+// Usage of the component
+<MyComponent name="John" />;

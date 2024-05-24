@@ -1,0 +1,13 @@
+<!-- Define the document structure -->
+<mjml>
+  <mj-body>
+    <!-- Define a section -->
+    <mj-section>
+      <!-- Define a column -->
+      <mj-column>
+        <!-- Add text content -->
+        <mj-text>Hello, world!</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

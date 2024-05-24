@@ -1,0 +1,23 @@
+/* Define styles for the header */
+header {
+  background-color: #333; /* Set the background color to dark gray */
+  color: white; /* Set the text color to white */
+  padding: 20px; /* Add padding around the content */
+}
+
+/* Define styles for the main content */
+.main-content {
+  width: 80%; /* Set the width to 80% of the container */
+  margin: 0 auto; /* Center the element horizontally */
+  padding: 20px; /* Add padding around the content */
+}
+
+/* Define styles for links */
+a {
+  color: #007bff; /* Set link color to blue */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}

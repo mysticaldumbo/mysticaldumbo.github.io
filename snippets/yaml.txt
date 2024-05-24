@@ -1,0 +1,13 @@
+# Define a list of employees
+employees:
+  # Define details of the first employee
+  - name: John Doe
+    age: 30
+    department: IT
+    salary: 50000.00
+  
+  # Define details of the second employee
+  - name: Jane Smith
+    age: 35
+    department: HR
+    salary: 60000.00

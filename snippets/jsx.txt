@@ -1,0 +1,22 @@
+const Greeting = ({ name }) => {
+  // Render a greeting message
+  return (
+    <div>
+      <h1>Hello, {name}!</h1> {/* Display the greeting message */}
+      <p>Welcome to our website.</p> {/* Display a welcome message */}
+    </div>
+  );
+};
+
+// Usage of the Greeting component
+const App = () => {
+  return (
+    <div>
+      <Greeting name="Alice" /> {/* Render the Greeting component with name prop */}
+      <Greeting name="Bob" /> {/* Render another instance of the Greeting component with different name prop */}
+    </div>
+  );
+};
+
+// Render the App component to the root element in the HTML document
+ReactDOM.render(<App />, document.getElementById('root'));

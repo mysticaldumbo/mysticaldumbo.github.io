@@ -112,4 +112,4 @@ function restart() {
 }
 
 // Start the game when the page loads
-startGame();
+restart();

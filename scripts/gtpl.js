@@ -1,115 +1,54 @@
-// Array of programming languages
+// WHY DOES THE ENTIRE LANGUAGE ARRAY TAKE UP OVER 50 LINES BRUH 😭😭😭😭
 let languages = [
-    "ABC",
-    "Assembly",
-    "Bash",
-    "Batch",
-    "C#",
-    "C++",
-    "Clojure",
-    "CoffeeScript",
-    "CSS",
-    "CSV",
-    "Dart",
-    "F#",
-    "Go",
-    "Groovy",
-    "HLSL",
-    "HTML",
-    "Java",
-    "JavaScript",
-    "JSON",
-    "JSX",
-    "Julia",
-    "Kotlin",
-    "Less",
-    "Lua",
-    "Makefile",
-    "Markdown",
-    "MDX",
-    "Mermaid",
-    "MJML",
-    "Perl",
-    "PHP",
-    "PowerShell",
-    "Pug",
-    "Python",
-    "R",
-    "Raku",
-    "Razor",
-    "Ruby",
-    "Rust",
-    "SCSS",
-    "SQL",
-    "Swift",
-    "TOML",
-    "TSX",
-    "Twig",
-    "TypeScript",
-    "VBS",
-    "WAT",
-    "XML",
-    "YAML",
-    "Zig"
-];  
+    "ABC", // music!!!
+    "Assembly", // i hate you
+    "Bash", // linux
+    "Batch", // underated asf
+    "C++", // better c
+    "Clojure", // (why)
+    "CoffeeScript", // comments are //# for some reason
+    "CSS", // style
+    "CSV", // does anybody actually use this
+    "Dart", // what nerf guns shoot
+    "Go", // dope & fast
+    "Groovy", // never used, no opinion.
+    "HLSL", // shading ig
+    "HTML", // <p>it's fine i guess.</p>
+    "Java", // why can't printing be simpler
+    "JavaScript", // blud gon be seein me usin this 🗣️🔥🔥
+    "JSON", // the best charts
+    "JSX", // just use html
+    "Julia", // never used
+    "Kotlin", // wanted to learn it but everybody just uses it for anroid bruh 💀
+    "Less", // worse css
+    "Lua", // no point in learning it unless you wanna learn its superset for funny block game creation
+    "Makefile", // m
+    "Markdown", // this is a fucking markUP language
+    "MDX", // react but markdown
+    "Mermaid", // markdown charts
+    "MJML", // isnt this for emails 😭🙏
+    "Perl", // nobody ever uses this
+    "PHP", // im not a front end dev
+    "PowerShell", // just use batch
+    "Pug", // worse html
+    "Python", // simple syntax, very slow.
+    "R", // ok but who does data analytics in 2024
+    "Raku", // seriously?
+    "Razor", // dont use this
+    "Ruby", // this syntax is more stupid easy than python and that really says something ☠️
+    "Rust", // i love fast orange crab language !!!
+    "SCSS", // beter css
+    "SQL", // fuck web development
+    "Swift", // nobody ues
+    "TOML", // rust only tbh
+    "TSX", // again, just use htm
+    "Twig", // its fine 
+    "TypeScript", // dont really use but its cool
+    "VBS", // bruh so dead
+    "WAT", // WHO USES THIS
+    "XML", // its alr
+    "YAML", // its alr
+    "Zig" // 🤷‍♂️
+];
 
-// Function to pick a random language
-function pickRandomLanguage() {
-    return languages[Math.floor(Math.random() * languages.length)];
-}
-
-// Function to check the user's guess
-function guessLanguage(guess) {
-    const lowercaseGuess = guess.toLowerCase();
-    const targetLanguage = languages.find(language => language.toLowerCase() === lowercaseGuess);
-    if (targetLanguage) {
-        alert("Congratulations! You guessed it. The programming language was: " + targetLanguage);
-        restart();
-    } else {
-        alert("Sorry, that's not correct. Keep guessing!");
-    }
-}
-
-// Function to generate a new language
-function generateNewLanguage() {
-    return pickRandomLanguage();
-}
-
-// Function to load a snippet from a file
-function loadSnippet(language) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `../snippets/${language.toLowerCase()}.txt`, true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            const snippet = xhr.responseText;
-            console.log(snippet);
-        }
-    };
-    xhr.send();
-}
-
-// Function to start the game
-function startGame() {
-    const targetLanguage = pickRandomLanguage();
-    console.log("I'm thinking of a programming language. Can you guess what it is?");
-    console.log("Type 'guessLanguage('language')' to guess.")
-
-    // Listen for user input in the console
-    document.addEventListener('keydown', function(event) {
-        if (event.keyCode === 13) {
-            const guess = prompt("Enter your guess:").trim();
-            guessLanguage(guess);
-        }
-    });
-
-    // Load a snippet of code for the target language
-    loadSnippet(targetLanguage);
-}
-
-function restart() {
-    console.clear();
-    startGame();
-}
-
-// Start the game when the page loads
-restart();
+// make later

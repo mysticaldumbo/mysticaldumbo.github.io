@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #000000, #171717);
+    color: rgb(255, 114, 114);
+    font-family: arial;
+}
+#icon {
+    height: 45vh;
+    margin-top: 30px;
+}
+#e {
+    text-align: middle;
+}

@@ -2,8 +2,9 @@
 :root {         
     --font: 'DejaVu Sans Mono', monospace;          
     --name: ".";
-    --fgcolor: rgb(255, 114, 114);
-    --accent: rgb(255, 114, 114);
+    --fgcolor: #ff7474;
+    --accent: #ff7474;
+    --border-color: #ff7474;
 }
 
 body, html {
@@ -41,4 +42,27 @@ body, html {
     #clock {
         font-size: 48pt;
     }
+}
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #ff7474;
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff7474;
 }

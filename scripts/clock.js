@@ -2,10 +2,12 @@
 
 function updateClock() {
     let now = new Date();
-    let hours = now.getHours().toString().padStart(2, '0');
+    let hours = now.getHours();
+    hours = hours % 12 || 12;
     let minutes = now.getMinutes().toString().padStart(2, '0');
     let seconds = now.getSeconds().toString().padStart(2, '0');
-    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    let timeString = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('clock').textContent = timeString;
 }
-updateClock()
+updateClock();
 setInterval(updateClock, 1000);

@@ -52,7 +52,6 @@ input[type="text"] {
     color: #ff7474;
     margin-right: 5px;
 }
-
 button[type="submit"] {
     padding: 10px 20px;
     font-size: 16px;
@@ -62,7 +61,16 @@ button[type="submit"] {
     color: #ffffff;
     cursor: pointer;
 }
-
 button[type="submit"]:hover {
     background-color: #ff7474;
+}
+a {
+    color: var(--accent);
+    text-decoration: underline;
+}
+a:hover {
+    color: #ff3c3c;
+}
+a:visited {
+    color: #82ffaa;
 }

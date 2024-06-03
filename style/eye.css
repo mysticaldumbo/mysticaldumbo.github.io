@@ -1,17 +1,14 @@
 /* FORK OF https://github.com/QuinceTart10/TartStart */
 :root {         
     --font: 'DejaVu Sans Mono', monospace;          
-    --name: ".";
-    --fgcolor: #ff7474;
     --accent: #ff7474;
-    --border-color: #ff7474;
 }
 
 body, html {
     background: linear-gradient(to bottom, #000000, #171717);
     height: 98vh;
     font-family: var(--font);
-    color: var(--fgcolor);
+    color: var(--accent);
 }
 .center-div {
     text-align: center;
@@ -30,9 +27,6 @@ body, html {
 .bigtext {
     font-size: xx-large;
 }
-#welcome::after {
-    content: var(--name);
-}
 @media (max-width: 625px) and (min-width: 470px) {
     #clock {
         font-size: 72pt;
@@ -46,10 +40,10 @@ body, html {
 input[type="text"] {
     padding: 10px;
     font-size: 16px;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--accent);
     border-radius: 5px;
     background-color: #1f1f1f;
-    color: #ff7474;
+    color: var(--accent);
     margin-right: 5px;
 }
 button[type="submit"] {
@@ -62,7 +56,7 @@ button[type="submit"] {
     cursor: pointer;
 }
 button[type="submit"]:hover {
-    background-color: #ff7474;
+    background-color: var(--accent);
 }
 a {
     color: var(--accent);
@@ -74,7 +68,9 @@ a:hover {
 a:visited {
     color: #82ffaa;
 }
-
 #dots {
     text-decoration: unset;
+}
+#dots:visited {
+    color: var(--accent);
 }

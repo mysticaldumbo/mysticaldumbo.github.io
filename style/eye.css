@@ -74,3 +74,7 @@ a:hover {
 a:visited {
     color: #82ffaa;
 }
+
+#dots {
+    text-decoration: unset;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online NEaT</title>
+    <style>
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background-color: #ADD8E6; /* Light blue background */
+        }
+        canvas { 
+            display: block; 
+            margin: auto; 
+        }
+        .platform { 
+            position: absolute; 
+            background: #3CB371; /* Platform color */
+        }
+        #player { 
+            width: 40px; 
+            height: 40px; 
+            background: #FF6347; /* Player color */
+            position: absolute; 
+        }
+        .block { 
+            position: absolute; 
+            width: 70px; 
+            height: 70px; /* Block size */
+        }
+    </style>
+</head>
+<body>
+    <div id="player"></div>
+    <script>
+        const canvasWidth = window.innerWidth;
+        const canvasHeight = window.innerHeight;
+        const player = document.getElementById('player');
+
+        // Player properties
+        let playerX = 155; // Center on the first platform
+        let playerY = 500; // Start on the lowest platform
+        let velocityY = 0;
+        let gravity = 1;
+        let jumpPower = -15;  
+        let isJumping = false;
+        let keys = {};
+
+        // Platforms (sorted by height)
+        const platforms = [
+            { x: 100, y: 250, width: 150, height: 20 }, // 3rd highest
+            { x: 300, y: 180, width: 150, height: 20 }, // 2nd highest
+            { x: 500, y: 110, width: 150, height: 20 }, // highest
+            { x: 700, y: 300, width: 150, height: 20 }, // New platform
+            { x: 400, y: 400, width: 150, height: 20 }, // New platform
+            { x: 200, y: 500, width: 150, height: 20 }, // Lowest platform
+        ];
+
+        // Obstacles (blocks)
+        const blocks = [
+            { x: 800, y: 500, color: '#FF4500' }, // OrangeRed
+            { x: 800, y: 430, color: '#32CD32' }, // LimeGreen
+            { x: 800, y: 360, color: '#1E90FF' }, // DodgerBlue
+            { x: 800, y: 290, color: '#FFD700' }, // Gold
+            { x: 800, y: 220, color: '#FF69B4' }, // HotPink
+            { x: 800, y: 150, color: '#9370DB' }  // MediumPurple
+        ];
+
+        function drawPlatforms() {
+            platforms.forEach(p => {
+                const platform = document.createElement('div');
+                platform.className = 'platform';
+                platform.style.width = p.width + 'px';
+                platform.style.height = p.height + 'px';
+                platform.style.left = p.x + 'px';
+                platform.style.top = p.y + 'px';
+                document.body.appendChild(platform);
+            });
+        }
+
+        function drawBlocks() {
+            blocks.forEach(b => {
+                const block = document.createElement('div');
+                block.className = 'block';
+                block.style.backgroundColor = b.color;
+                block.style.left = b.x + 'px';
+                block.style.top = b.y + 'px';
+                document.body.appendChild(block);
+            });
+        }
+
+        function update() {
+            // Horizontal movement
+            if (keys['a'] && playerX > 0) playerX -= 5;
+            if (keys['d'] && playerX < canvasWidth - 40) playerX += 5;
+
+            // Vertical movement
+            playerY += velocityY;
+            velocityY += gravity;
+
+            // Check for landing on platforms
+            platforms.forEach((p, index) => {
+                if (playerX < p.x + p.width && playerX + 40 > p.x &&
+                    playerY + 40 < p.y + p.height && playerY + 40 + velocityY >= p.y) {
+                    playerY = p.y - 40;
+                    velocityY = 0;
+                    isJumping = false;
+
+                    // Check if it's the 3rd highest platform (index 0)
+                    if (index === 0) { // Adjusted for the correct platform
+                        alert("code is 7936");
+                    }
+                }
+            });
+
+            // Check for collision with blocks
+            blocks.forEach(b => {
+                if (playerX < b.x + 70 && playerX + 40 > b.x &&
+                    playerY + 40 < b.y + 70 && playerY + 40 + velocityY >= b.y) {
+                    playerY = b.y - 40; // Land on the block
+                    velocityY = 0;
+                    isJumping = false;
+                }
+            });
+
+            // Keep player within bounds
+            if (playerY > canvasHeight - 40) {
+                playerY = canvasHeight - 40;
+                velocityY = 0;
+                isJumping = false;
+            }
+
+            player.style.left = playerX + 'px';
+            player.style.top = playerY + 'px';
+
+            requestAnimationFrame(update);
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && !isJumping) {
+                velocityY = jumpPower;
+                isJumping = true;
+            }
+            if (e.code === 'KeyA') keys['a'] = true;
+            if (e.code === 'KeyD') keys['d'] = true;
+        });
+
+        window.addEventListener('keyup', (e) => {
+            if (e.code === 'KeyA') keys['a'] = false;
+            if (e.code === 'KeyD') keys['d'] = false;
+        });
+
+        drawPlatforms();
+        drawBlocks();
+        update();
+    </script>
+</body>
+</html>

@@ -8,26 +8,22 @@
         body { 
             margin: 0; 
             overflow: hidden; 
-            background-color: #ADD8E6; /* Light blue background */
-        }
-        canvas { 
-            display: block; 
-            margin: auto; 
+            background-color: #ADD8E6;
         }
         .platform { 
             position: absolute; 
-            background: #3CB371; /* Platform color */
+            background: #3CB371;
         }
         #player { 
             width: 40px; 
             height: 40px; 
-            background: #FF6347; /* Player color */
+            background: #FF6347;
             position: absolute; 
         }
         .block { 
             position: absolute; 
             width: 70px; 
-            height: 70px; /* Block size */
+            height: 70px;
         }
     </style>
 </head>
@@ -38,33 +34,30 @@
         const canvasHeight = window.innerHeight;
         const player = document.getElementById('player');
 
-        // Player properties
-        let playerX = 155; // Center on the first platform
-        let playerY = 500; // Start on the lowest platform
+        let playerX = 200;
+        let playerY = 460;
         let velocityY = 0;
         let gravity = 1;
         let jumpPower = -15;  
         let isJumping = false;
         let keys = {};
 
-        // Platforms (sorted by height)
         const platforms = [
-            { x: 100, y: 250, width: 150, height: 20 }, // 3rd highest
-            { x: 300, y: 180, width: 150, height: 20 }, // 2nd highest
-            { x: 500, y: 110, width: 150, height: 20 }, // highest
-            { x: 700, y: 300, width: 150, height: 20 }, // New platform
-            { x: 400, y: 400, width: 150, height: 20 }, // New platform
-            { x: 200, y: 500, width: 150, height: 20 }, // Lowest platform
+            { x: 100, y: 250, width: 150, height: 20 },
+            { x: 300, y: 180, width: 150, height: 20 }, 
+            { x: 500, y: 110, width: 150, height: 20 }, 
+            { x: 700, y: 300, width: 150, height: 20 }, 
+            { x: 400, y: 400, width: 150, height: 20 }, 
+            { x: 200, y: 500, width: 150, height: 20 },
         ];
 
-        // Obstacles (blocks)
         const blocks = [
-            { x: 800, y: 500, color: '#FF4500' }, // OrangeRed
-            { x: 800, y: 430, color: '#32CD32' }, // LimeGreen
-            { x: 800, y: 360, color: '#1E90FF' }, // DodgerBlue
-            { x: 800, y: 290, color: '#FFD700' }, // Gold
-            { x: 800, y: 220, color: '#FF69B4' }, // HotPink
-            { x: 800, y: 150, color: '#9370DB' }  // MediumPurple
+            { x: 800, y: 500, color: '#FF4500' },
+            { x: 800, y: 430, color: '#32CD32' },
+            { x: 800, y: 360, color: '#1E90FF' },
+            { x: 800, y: 290, color: '#FFD700' },
+            { x: 800, y: 220, color: '#FF69B4' },
+            { x: 800, y: 150, color: '#9370DB' }
         ];
 
         function drawPlatforms() {
@@ -91,15 +84,12 @@
         }
 
         function update() {
-            // Horizontal movement
             if (keys['a'] && playerX > 0) playerX -= 5;
             if (keys['d'] && playerX < canvasWidth - 40) playerX += 5;
 
-            // Vertical movement
             playerY += velocityY;
             velocityY += gravity;
 
-            // Check for landing on platforms
             platforms.forEach((p, index) => {
                 if (playerX < p.x + p.width && playerX + 40 > p.x &&
                     playerY + 40 < p.y + p.height && playerY + 40 + velocityY >= p.y) {
@@ -107,24 +97,21 @@
                     velocityY = 0;
                     isJumping = false;
 
-                    // Check if it's the 3rd highest platform (index 0)
-                    if (index === 0) { // Adjusted for the correct platform
+                    if (index === 0) {
                         alert("code is 7936");
                     }
                 }
             });
 
-            // Check for collision with blocks
             blocks.forEach(b => {
                 if (playerX < b.x + 70 && playerX + 40 > b.x &&
                     playerY + 40 < b.y + 70 && playerY + 40 + velocityY >= b.y) {
-                    playerY = b.y - 40; // Land on the block
+                    playerY = b.y - 40;
                     velocityY = 0;
                     isJumping = false;
                 }
             });
 
-            // Keep player within bounds
             if (playerY > canvasHeight - 40) {
                 playerY = canvasHeight - 40;
                 velocityY = 0;
